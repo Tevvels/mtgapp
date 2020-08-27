@@ -17,7 +17,7 @@ function App() {
       <p className="card_cost card_color">cost/color</p>
       <p className="card_attribute">type/attribute</p>
       <p className="card_set card_rarity">set/rarity</p>
-      <p className="card_desc">description</p>
+      <p className="card_desc">descriptions</p>
   </article>
   </Router>
   );
