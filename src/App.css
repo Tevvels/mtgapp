@@ -1,0 +1,21 @@
+*{
+  border:none;
+  padding:none;
+  box-sizing: border-box;
+
+}
+
+body{
+  background:blue;
+}
+
+
+
+.card{
+
+  height: 5rem;
+  width: 2rem;
+  color:brown;
+  
+
+}

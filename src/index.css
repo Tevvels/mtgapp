@@ -1,0 +1,59 @@
+*{
+  border:none;
+  padding:none;
+  box-sizing: border-box;
+
+}
+
+body{
+  background:blue;
+}
+
+
+
+.card{
+
+  display: grid;
+  grid-template-columns: 3% 44.5% 40.5% 7%;
+  grid-template-rows: 25% 10%;
+  height: 17rem;
+  width: 12rem;
+  background:brown;
+  border-radius:3px;
+  border: .5rem solid white; 
+
+}
+
+.card_name{
+	color: white;
+	font-size:.95rem;
+	grid-row: 1;
+	grid-column:2/3;
+	border: 1px solid white;
+	width: 100%;
+}
+
+.card_cost{
+	grid-column:4;
+	color: white;
+		
+}
+.card_set{
+	grid-row: 3;
+	color: pink;
+	grid-column: 4;
+}
+.card_attribute{
+	color: yellow;
+	grid-row: 3;
+}
+.card_desc{
+	color: green;
+	background:tan;
+	height: 6rem;
+	grid-column: 2/6;
+	grid-row: 4;
+	width: 95%;
+
+
+}
