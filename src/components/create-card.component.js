@@ -1,10 +1,10 @@
-import React, {Component} from 'React';
+import React, {Component} from 'react';
 import axios from 'axios';
 export default class CreateUsers extends Component{
 	constructor(props){
 
 		super(props);
-		this.onCreateCard = this.onCreateCard.bind(this);
+		this.onAddCardName = this.onAddCardName.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
@@ -76,11 +76,10 @@ export default class CreateUsers extends Component{
 	}
 
 	render(){
-		return (
-				<div>something</div>
+		return(
 
+			<div>adding something here</div>
 
-
-			)
-	}
+		 	)
+		}
 }
