@@ -14,13 +14,7 @@ function App() {
       
 
 
-    <article className="card">
-      <h2 className="card_name">Card Name</h2>   
-      <p className="card_cost card_color">cost/color</p>
-      <p className="card_attribute">type/attribute</p>
-      <p className="card_set card_rarity">set/rarities</p>
-      <p className="card_desc">descriptions</p>
-  </article>
+
   </Router>
   );
 }

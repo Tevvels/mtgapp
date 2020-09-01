@@ -4,18 +4,21 @@
   box-sizing: border-box;
 
 }
-
+/*
 body{
   background:blue;
-}
+}*/
 
 
 
-.card{
+.card_image{
 
   height: 5rem;
   width: 2rem;
   color:brown;
   
 
+}
+.card_data{
+	background:blue;
 }

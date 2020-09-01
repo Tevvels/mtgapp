@@ -5,6 +5,11 @@ export default class CreateUsers extends Component{
 
 		super(props);
 		this.onAddCardName = this.onAddCardName.bind(this);
+		this.onAddCardCost = this.onAddCardCost.bind(this);
+		this.onAddCardAttribute = this.onAddCardAttribute.bind(this);
+		this.onAddCardType = this.onAddCardType.bind(this);
+		this.onAddCardDesc = this.onAddCardDesc.bind(this);
+
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
@@ -31,7 +36,7 @@ export default class CreateUsers extends Component{
 		this.setState({
 			cardName: e.target.value
 		});
-	}
+	};
 
 	onAddCardCost(e){
 		this.setState({
@@ -77,9 +82,30 @@ export default class CreateUsers extends Component{
 
 	render(){
 		return(
+			 <div className = "create_card">
+			 	<form className = "create_card--form" onSubmit={this.onSubmit}>
+			 		<h2 className = "create_card--title">
+			 			Card Input
+			 		</h2>
+			 		<label className ="create_card--name">
+			 			Name:
+			 		</label>
+			 		<input className = "create_card--name create_card--input" type="text" value={this.state.cardName} onChange={this.onAddCardName}/>
 
-			<div>adding something here</div>
 
+			 		<label className ="create_card--cost">
+			 			Cost:
+			 		</label>
+			 		<input className = "create_card--cost create_card--input" type="text" value={this.state.cardCost} onChange={this.onAddCardCost}/>
+
+			 		<label className ="create_card--attribute">
+			 			Attribute:
+			 		</label>
+			 		<input className = "create_card--desc create_card--input" type="textarea" value={this.state.cardAttribute} onChange={this.onAddCardAttribute}/>
+			 		<input className = "create_card--submit" type="submit" Submit />
+
+			 	</form>
+			 </div>
 		 	)
 		}
 }

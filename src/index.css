@@ -11,7 +11,7 @@ body{
 
 
 
-.card{
+.card__image{
 
   display: grid;
   grid-template-columns: 3% 44.5% 40.5% 7%;

@@ -48,7 +48,12 @@ export default class CardList extends Component{
 
 	render(){
 		return(
-			<div>
+
+			
+			<div className = "card card__main">
+
+				<div className = "card card__image">the image</div>
+				<div className = " card card__data">the data</div>
 				{this.CardList()}
 			</div>
 
