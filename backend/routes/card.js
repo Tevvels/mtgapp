@@ -3,7 +3,7 @@ let Card = require("../models/card.model");
 
 router.route('/').get((req,res)=>{
 	Card.find()
-		.then(studylog => res.json(card))
+		.then(card => res.json(card))
 		.catch(err => res.status(400).json("Error" + err));
 
 });

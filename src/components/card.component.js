@@ -4,15 +4,15 @@ import axios from 'axios';
 
 const Card = props =>(
 
-	<tr>
-		<td>{props.card.cardName}</td>
-		<td>{props.card.cardCost}</td>
+	<tr className="card__data">
+		<td className="card card__data--name">{props.card.cardName}</td>
+		<td className ="card card__data--cost">{props.card.cardCost}</td>
 		<td>{props.card.cardType}</td>
 		<td>{props.card.cardSet}</td>
 		<td>{props.card.cardDesc}</td>
 	</tr>
 
-	)
+	)// a functional react component
  
 
 export default class CardList extends Component{
@@ -24,15 +24,15 @@ export default class CardList extends Component{
 
 	}
 	componentDidMount(){
-		axios.get('http://localhost:5000/cards/')
-			.then(res => console.log(res.data))
+		axios.get('http://localhost:5000/card/')
+			.then(res =>this.setState({cards:res.data}))
 			.catch((error)=> {
 				console.log(error);
 			})
 	}
 
 	deleteCard(id){
-		axios.delete('http://localhost:5000/cards/' + id)
+		axios.delete('http://localhost:5000/card/' + id)
 			.then(res => console.log(res.data));
 
 		this.setState({
@@ -50,11 +50,12 @@ export default class CardList extends Component{
 		return(
 
 			
-			<div className = "card card__main">
-
-				<div className = "card card__image">the image</div>
-				<div className = " card card__data">the data</div>
-				{this.CardList()}
+			<div className = "card card__main"> 
+			<table className ="card__main">
+				<tr className="card__image">image</tr>
+				<tr className="card__data">{this.CardList()}</tr>
+				<tr className ="card__action">actions</tr>
+			</table>	
 			</div>
 
 			)

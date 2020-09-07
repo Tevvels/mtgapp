@@ -4,6 +4,7 @@ export default class CreateUsers extends Component{
 	constructor(props){
 
 		super(props);
+		this.onAddCardImage = this.onAddCardImage.bind(this);
 		this.onAddCardName = this.onAddCardName.bind(this);
 		this.onAddCardCost = this.onAddCardCost.bind(this);
 		this.onAddCardAttribute = this.onAddCardAttribute.bind(this);
@@ -13,6 +14,7 @@ export default class CreateUsers extends Component{
 		this.onSubmit = this.onSubmit.bind(this);
 
 		this.state = {
+			cardImage: '',
 			cardName: '',
 			cardCost: '',
 			cardType: '',
@@ -21,23 +23,27 @@ export default class CreateUsers extends Component{
 		}
 	}
 
-	componentDidMount(){
-		axios.get('http://localhost:5000/card/')
-		.then(response =>{
-			if(response.data.length > 0){
-				this.setState({
-					card:response.data.map(card => card.cardName),
-					cardName: response.data[0].cardName
-				})
-			}
-		})
-	}
+	// componentDidMount(){
+	// 	axios.get('http://localhost:5000/card/')
+	// 	.then(response =>{
+	// 		if(response.data.length > 0){
+	// 			this.setState({
+	// 				card:response.data.map(card => card.cardName),
+	// 				cardName: response.data[0].cardName
+	// 			})
+	// 		}
+	// 	})
+	// }
 	onAddCardName(e){
 		this.setState({
 			cardName: e.target.value
 		});
 	};
-
+	onAddCardImage(e){
+		this.setState({
+			cardImage: e.target.value
+		});
+	};
 	onAddCardCost(e){
 		this.setState({
 			cardCost: e.target.value
@@ -98,10 +104,19 @@ export default class CreateUsers extends Component{
 			 		</label>
 			 		<input className = "create_card--cost create_card--input" type="text" value={this.state.cardCost} onChange={this.onAddCardCost}/>
 
-			 		<label className ="create_card--attribute">
-			 			Attribute:
+			 		<label className ="create_card--type">
+			 			Type:
 			 		</label>
-			 		<input className = "create_card--desc create_card--input" type="textarea" value={this.state.cardAttribute} onChange={this.onAddCardAttribute}/>
+			 		<input className = "create_card--type create_card--input" type="text" value={this.state.cardType} onChange={this.onAddCardType}/>
+					
+					<label className ="create_card--attribute">
+			 			desc:
+			 		</label>
+			 		<input className = "create_card--desc create_card--input" type="textArea" value={this.state.cardDesc} onChange={this.onAddCardDesc}/>
+
+
+
+
 			 		<input className = "create_card--submit" type="submit" Submit />
 
 			 	</form>

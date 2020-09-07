@@ -5,49 +5,67 @@
 
 }
 
-body{
-  background:blue;
+
+.card__main{
+	display: grid;
+	grid-template-columns: 50%;
+	grid-template-columns: 50%;
+
 }
-
-
-
+.card__action{
+	grid-column: 2;
+	grid-row: 2;
+}
 .card__image{
 
+
+  grid-column:1;
+  grid-row: 1/3;
   display: grid;
   grid-template-columns: 3% 44.5% 40.5% 7%;
   grid-template-rows: 25% 10%;
-  height: 17rem;
-  width: 12rem;
   background:brown;
   border-radius:3px;
   border: .5rem solid white; 
 
 }
+.card__data{
+	grid-row: 1;
+	grid-column: 2;
+	display: grid;
+	grid-template-columns: 15%;
+	grid-template-rows:15%;
+	background: rgb(130,150,90);
+	border: 1px solid black;
+}
 
-.card_name{
-	color: white;
+.card__data--name{
+	color: lime;
 	font-size:.95rem;
 	grid-row: 1;
 	grid-column:2/3;
 	border: 1px solid white;
 	width: 100%;
+
+
 }
 
-.card_cost{
+.card__data--cost{
 	grid-column:4;
 	color: white;
+
 		
 }
-.card_set{
+.card__data--set{
 	grid-row: 3;
 	color: pink;
 	grid-column: 4;
 }
-.card_attribute{
+.card__data--attribute{
 	color: yellow;
 	grid-row: 3;
 }
-.card_desc{
+.card__data--desc{
 	color: green;
 	background:tan;
 	height: 6rem;
