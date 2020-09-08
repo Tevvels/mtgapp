@@ -5,11 +5,11 @@ import axios from 'axios';
 const Card = props =>(
 
 	<tr className="card__data">
-		<td className="card card__data--name">{props.card.cardName}</td>
-		<td className ="card card__data--cost">{props.card.cardCost}</td>
-		<td>{props.card.cardType}</td>
-		<td>{props.card.cardSet}</td>
-		<td>{props.card.cardDesc}</td>
+		<td className= "card card__data--name">{props.card.cardName}</td>
+		<td className= "card card__data--cost">{props.card.cardCost}</td>
+		<td className= "card card__data--type">{props.card.cardType}</td>
+		<td className= "card card__data--set">{props.card.cardSet}</td>
+		<td className="card card__data--desc">{props.card.cardDesc}</td>
 	</tr>
 
 	)// a functional react component
@@ -53,8 +53,8 @@ export default class CardList extends Component{
 			<div className = "card card__main"> 
 			<table className ="card__main">
 				<tr className="card__image">image</tr>
-				<tr className="card__data">{this.CardList()}</tr>
-				<tr className ="card__action">actions</tr>
+				<tr className="card__data--tr">{this.CardList()}</tr>
+				<tr className = "card__actions">actions</tr>
 			</table>	
 			</div>
 
