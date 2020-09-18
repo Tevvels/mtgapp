@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import image from '../image/plains.jpg';
 
-
-const images = {
-	plains: 'plains.jpg',
-	silver_myr: 'silver_myr.jpg'
-}
 
 
 
@@ -14,6 +8,7 @@ const images = {
 const Card = props => (
 
 	<tr className="card__data">
+		<img src={props.card.cardImage} height={300} width={230} />
 		<td className= "card card__data--name">{props.card.cardName}</td>
 		<td className= "card card__data--cost">{props.card.cardCost}</td>
 		<td className= "card card__data--type">{props.card.cardType}</td>
@@ -61,8 +56,6 @@ export default class CardList extends Component{
 			
 			<div className = "card card__main"> 
 			<table className ="card__main">
-
-				<img src={image} alt={image} className="card__image" height={300} width={230}/>
 				<tr className="card__data--tr">{this.CardList()}</tr>
 				<tr className = "card__actions">actions</tr>
 			</table>	

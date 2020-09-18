@@ -23,7 +23,10 @@ const cardSchema = new Schema({
 	cardDesc:{
 		type:String
 
-	},				
+	},
+	cardImage:{
+		type:String
+	}				
 });
 const card = mongoose.model("card",cardSchema);
 module.exports = card;

@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import image from '../image/silver_myr.jpg'
+
+
+
+
 
 function UserGreeting(props){
 	return <h1>Welcome Back! </h1>
@@ -79,7 +82,6 @@ export default class Test extends Component{
 			<Welcome name="chris"/>
 			<Welcome name="benjamin"/>
 			<Welcome name="watkins"/>
-			<img src ={image} alt="image" height={200} width={200} />
 			</div>
 		)
 	}

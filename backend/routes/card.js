@@ -14,13 +14,14 @@ router.route('/add').post((req,res)=>{
 	const cardType = req.body.cardType;
 	const cardSet = req.body.cardSet;
 	const cardDesc = req.body.cardDesc;
-
+	const cardImage = req.body.cardImage;
 	const newCard = new Card({
 		cardName,
 		cardCost,
 		cardType,
 		cardSet,
 		cardDesc,
+		cardImage,
 	});
 
 	newCard.save()
@@ -50,6 +51,7 @@ router.route('/update/:id').post((res,req)=>{
 			card.cardSet = req.body.cardSet;
 			card.cardType = req.body.cardType;
 			card.cardDesc = req.body.cardDesc;
+			card.cardImage = req.body.cardImage;
 			card.save()
 				.then(()=> res.json('Card Updated'))
 				.catch(err => res.status(400).json("Error" + err));
