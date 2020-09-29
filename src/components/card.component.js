@@ -4,18 +4,33 @@ import axios from 'axios';
 
 
 
+class listOfCards extends Component{
+	render(){
+		return <div className= "list"> hello </div>
+	}
+}
+
+
 
 const Card = props => (
+	<div className="main__test">
+		
 
-	<tr className="card__data">
-		<img src={props.card.cardImage} height={300} width={230} />
-		<td className= "card card__data--name">{props.card.cardName}</td>
-		<td className= "card card__data--cost">{props.card.cardCost}</td>
-		<td className= "card card__data--type">{props.card.cardType}</td>
-		<td className= "card card__data--set">{props.card.cardSet}</td>
-		<td className="card card__data--desc">{props.card.cardDesc}</td>
-	</tr>
+		<select className="card__data select">
+			<option className="deck"> Deck Name </option>
 
+		
+		</select>
+		<tr className ="list">
+			<td className= "card list__li card__data--name">{props.card.cardName}</td>
+		</tr>
+
+		<div className="img">
+			<img className ="images"src={props.card.cardImage}/>
+		</div>
+		
+
+	</div>
 	)// a functional react component
  
 
@@ -53,11 +68,14 @@ export default class CardList extends Component{
 	render(){
 		return(
 
-			
-			<div className = "card card__main"> 
-			<table className ="card__main">
-				<tr className="card__data--tr">{this.CardList()}</tr>
-				<tr className = "card__actions">actions</tr>
+			<div className = "card card__main main"> 
+			<table className ="card__main main__test">
+
+					<tr className="card__data--tr main__test">{this.CardList()[2]}</tr>
+	
+
+					<listOfCards />
+				<tr className = "card__actions option">actions</tr>
 			</table>	
 			</div>
 

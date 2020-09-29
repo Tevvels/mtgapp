@@ -1,11 +1,11 @@
 *{
-  border:none;
-  padding:none;
+  margin:0;
+  padding:0;
   box-sizing: border-box;
 
 }
 
-
+/*
 .card__main{
 	display: grid;
 	grid-template-rows: 60% 40%;
@@ -81,6 +81,101 @@
 	height: 6rem;
 	grid-column:1/3;
 	grid-row: 3;
+*/
+.main{
+	height: auto;
+	width: auto;
+	display: grid;
+	justify-content: center;
+	grid-template-rows: 3rem 3rem 3rem;
+	grid-template-areas: 
+	". . ."
+	". main ."
+	". main ."
+	". . ."
+	;
+}
+.main__test{
+	grid-area: main;
+	display: grid;
+	grid-template-rows:auto;
+	grid-template-areas: 
+	"select select"
+	"list image"
+	"list image"
+	"list image"
+	;
+	background: #3b6064;
+	height: 80vh;
+	box-shadow: 0 0 1.4rem #3b6064;
+	width: 60vw;
+}
+.img{
+	grid-area:image;
+	overflow: hidden;
+	width: 23vw;
+}
+.images{
+	height: 100%;
+
+}
+
+.deck{
+	font-size: 2rem;
+	text-align: center;
+}
+.select{
+	grid-area:select;
+	height: 4rem;
+	background: #3b6064;
+	width: 60vw;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	font-size:2rem;
+	text-align: center;
 
 
+}
+.select__ul{
+	display: flex;
+}
+
+.list{
+
+	font-size: 2rem;
+	grid-area: list;
+	background: #87BBA2;
+	width: 36.2vw;
+
+
+
+}
+.option{
+	color:white;
+	padding: 1rem;
+	text-decoration: none;
+	list-style: none;
+	display: none;
+	font-size: 2rem;
+}
+
+.list__ul{
+	padding: 0;
+}
+.list__li{
+	font-size: 1.8rem;
+	display: block;
+	height: 2.5rem;
+	background: lightblue;
+	width:100%;
+	border-bottom: 1px solid white;
+	list-style: none;
+	padding-left: 2rem;
+	color: white;
+
+}
+.list__li:hover{
+	background: #17B0A2;
 }
