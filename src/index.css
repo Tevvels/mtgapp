@@ -36,7 +36,7 @@
 }
 .img{
 	grid-area:image;
-	overflow: hidden;
+	overflow: scroll;
 	width: 23vw;
 }
 .images{
@@ -72,6 +72,7 @@
 	grid-area: list;
 	background: #87BBA2;
 	width: 36.2vw;
+	cursor: pointer;
 
 
 
