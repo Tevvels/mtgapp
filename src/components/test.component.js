@@ -1,9 +1,27 @@
 import React, {Component} from 'react';
-
+import axios from 'axios';
 const numbers =[1,2,3,4,5];
 const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
 
+export class Cards extends Component{
+	constructor(props){
+		super(props);
+		this.state = {cards:{}};
+	}
+	componentDidMount(){
+		axios.get('http://localhost:5000/card/')
+		.then(res => this.setState({card:res.data}))
+		.catch((error)=> {
+			console.log(error);
+		})
+	}
+	render(){
+		return(
+				<div> hello </div>
+			)
+	}
+}
 
 
 
@@ -78,8 +96,9 @@ const element = <Welcome name="Chris" />
 export default class Test extends Component{
 	render(){
 		return(
-
 		<div className = "main">
+		<Cards />
+
 			<div className="main main__test">
 			<div className ="select">
 				<ul className="select__ul" name="cards">
