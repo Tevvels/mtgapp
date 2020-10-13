@@ -36,12 +36,12 @@
 }
 .img{
 	grid-area:image;
-	overflow: scroll;
-	width: 23vw;
+	overflow: hidden;
+	width: 22vw;
 }
 .images{
 	height: 100%;
-	width: 23vw;
+	width: 22vw;
 }
 
 .deck{

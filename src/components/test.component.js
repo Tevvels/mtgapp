@@ -1,8 +1,35 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import axios from 'axios';
 const numbers =[1,2,3,4,5];
 const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
+
+
+
+
+
+function Example(){
+
+	const [count, setCount] = useState("../image/back of card.jpg");
+
+	return(
+		<div>
+		<img src={count}></img>
+				<button onClick={()=> setCount(count +1)}>
+				click me
+				</button>
+			</div>
+
+		)
+
+
+
+}
+
+
+
+
+
 
 export class Cards extends Component{
 	constructor(props){
@@ -19,8 +46,24 @@ export class Cards extends Component{
 	render(){
 		return(
 				<div> hello </div>
+
 			)
 	}
+}
+
+
+
+
+ class ButtonFunction extends React.Component {
+	 showPicture(){
+	 	alert ("something");
+
+	 }
+	 render(){
+	 	return(
+	 		<button onClick={this.showPicture}> button</button>
+	 	);
+	 }
 }
 
 
@@ -74,6 +117,8 @@ function Welcome(props){
 		()=> this.tick(),
 		 1000
 		);
+
+
 	}
 	componentWillUnmount(){
 		clearInterval(this.timerID);
@@ -94,13 +139,42 @@ function Welcome(props){
 }
 const element = <Welcome name="Chris" />
 export default class Test extends Component{
+
+	constructor(props) {
+		super(props);
+		this.clicked = this.clicked.bind(this);
+		this.state = {cards:{},buttonClicked: false};
+	}
+
+	clicked() {
+		this.setState({buttonClicked:true})
+	}
+
+
+
+
+
 	render(){
+
+		const buttonClicked = this.state.buttonClicked;
+		let img;
+
+		if(buttonClicked) {
+			img = <img className= "images" src="../image/plains.jpg" />
+		}else{
+			img = <button onClick={this.clicked}> click me </button>
+		}
+
+
+
 		return(
 		<div className = "main">
 		<Cards />
-
+		<Example />
 			<div className="main main__test">
 			<div className ="select">
+			<Buttons buttonClicked={buttonClicked}/>
+			{img}
 				<ul className="select__ul" name="cards">
 					<li className="option active" value="deck">option 1</li>
 					<li className="option" value="deck">option 2</li>
@@ -116,6 +190,7 @@ export default class Test extends Component{
 					</ul>
 
 				</div>
+				<Buttons />
 				<div className="img">
 					<img className= "images" src="../image/plains.jpg" />
 				</div>
@@ -128,4 +203,14 @@ export default class Test extends Component{
 
 		)
 	}
+}
+
+
+function Buttons(props){
+	const buttonClicked = props.buttonClicked;
+	if(buttonClicked){
+		return 	<img className= "images" src="../image/plains.jpg" />
+
+	}
+	return "workds"
 }
