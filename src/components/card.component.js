@@ -16,8 +16,6 @@ const CardName = props =>(
 const Card = props => (
 	props.card.cardImage
 	)// a functional react component
- 
-
 
 
 export default class CardImage extends Component{
@@ -41,25 +39,28 @@ export default class CardImage extends Component{
 	}
 
 	deleteCard(id){
-		axios.delete(urlLocation +'card/' + id)
+		axios.delete(urlLocation +'card/' +id)
 			.then(res => console.log(res.data));
 
 		this.setState({
-			Card: this.state.cards.filter( el => el._id !== id)
+			cards: this.state.cards.filter( el => el._id !== id)
 		})
+		window.location = "/";
 	}
 
 
 
 	CardName(){
 		return this.state.cards.map(currentCardName => {
-			return<button className="list__li" onClick={this.imageButton}><CardName card={currentCardName} key={currentCardName._id} /></button>
+			return <div> <button className="list__li" onClick={this.imageButton}><CardName card={currentCardName} key={currentCardName._id} /></button><button  onClick={() => {this.deleteCard(currentCardName._id)}}> X </button></div>
+
+			
 		})
 	}
 
 
 
-	imageButton(event,img){
+	imageButton(event){
 		for (var i = 0; i < this.state.cards.length; i++) {
 			if(this.state.cards[i].cardName == event.target.innerHTML){
 				this.setState({ images: this.state.cards[i].cardImage})
@@ -80,16 +81,13 @@ export default class CardImage extends Component{
 					<option className="deck"> Blue/White Control </option>
 				</select>
 
-				<div className ="cardName list">
-					<td className= "card list__li card__data--name">{}</td>
-				</div>
-
 
 
 
 					<tr className="list">			
 							<div className ="cardName list">
-							<td className= "card list__li card__data--name" onClick={this.CardEvent}>{this.CardName()}</td>
+							<td className= "card list__li card__data--name">{this.CardName()}</td>
+
 						</div>
  					</tr>
 					<imageButton/>

@@ -33,6 +33,7 @@
 	height: 80vh;
 	box-shadow: 0 0 1.4rem #3b6064;
 	width: 60vw;
+	border-radius: .5rem;
 }
 .img{
 	grid-area:image;
@@ -59,8 +60,7 @@
 	text-transform: uppercase;
 	font-size:2rem;
 	text-align: center;
-
-
+	color: white;
 }
 .select__ul{
 	display: flex;
@@ -98,8 +98,7 @@
 	width:100%;
 	border-bottom: 1px solid white;
 	list-style: none;
-	padding-left: 2rem;
-	color: white;
+	color: black;
 
 }
 .list__li:hover{
