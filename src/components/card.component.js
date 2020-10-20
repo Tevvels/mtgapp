@@ -1,5 +1,7 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 import axios from 'axios';
+
 
 const urlLocation = "http://localhost:5000/";
 
@@ -52,7 +54,7 @@ export default class CardImage extends Component{
 
 	CardName(){
 		return this.state.cards.map(currentCardName => {
-			return <div> <button className="list__li" onClick={this.imageButton}><CardName card={currentCardName} key={currentCardName._id} /></button><button  onClick={() => {this.deleteCard(currentCardName._id)}}> X </button></div>
+			return <div className="list__li "> <button className="item" onClick={this.imageButton}><CardName card={currentCardName} key={currentCardName._id} /></button><button className="delete" onClick={() => {this.deleteCard(currentCardName._id)}}> X </button></div>
 
 			
 		})
@@ -63,7 +65,13 @@ export default class CardImage extends Component{
 	imageButton(event){
 		for (var i = 0; i < this.state.cards.length; i++) {
 			if(this.state.cards[i].cardName == event.target.innerHTML){
+				var current = document.getElementsByClassName("active");
+				if(current.length > 0){
+					current[0].className = current[0].className.replace("active","");
+				}
+				this.className +="active";
 				this.setState({ images: this.state.cards[i].cardImage})
+
 			}
 		}
 	}
@@ -84,14 +92,14 @@ export default class CardImage extends Component{
 
 
 
-					<tr className="list">			
+					<tr className="list">
+							<Link to="/create">add new Card</Link>			
 							<div className ="cardName list">
 							<td className= "card list__li card__data--name">{this.CardName()}</td>
 
 						</div>
  					</tr>
-					<imageButton/>
-					<tr className="card__data--tr img"><img className ="images" src={this.state.images}/></tr>
+					<tr className="card__data--tr img"><img className ="images" src={this.state.images} alt={this.state.cards.cardName}/></tr>
 	
 			</table>	
 			</div>

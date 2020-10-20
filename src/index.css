@@ -77,6 +77,17 @@
 
 
 }
+.item{
+
+	background: none;
+	border: none;
+	height: 100%;
+	width: 80%;
+	font-size: 2rem;
+
+
+
+}
 .option{
 	color:white;
 	padding: 1rem;
@@ -103,4 +114,57 @@
 }
 .list__li:hover{
 	background: #17B0A2;
+}
+
+
+.delete{
+	background: none;
+	font-size:2rem;
+	border:none;
+}
+@media only screen and (max-width:600px){
+
+	.main__test{
+		grid-template-areas:
+		"select"
+		"list"
+		"image"
+		;
+	}
+	body{
+		background: blue;
+
+	}
+	.main{
+		height: 100%;
+		width: 100%;
+		grid-template-areas:
+		"main"
+		"main"
+		"main"
+		;
+	}
+	.main__test{
+		width: 100vh;
+		height:100vh;
+	}
+	.img{
+		height: 100%;
+		width: 100%;
+	}
+	.select{
+		width: 100%;
+
+	}
+	.images{
+		height: 100%;
+		width: 100vw;
+		position: relative;
+		left: 26%;
+	}
+	.list{
+		width: 100%;
+		height: 100%;
+	}
+	
 }
